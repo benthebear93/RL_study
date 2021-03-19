@@ -26,9 +26,9 @@ Collection of everything that i learn about Reinforcement Learning
 
 - [x] 모두를 위한 RL강좌 :: Lab2 Playing OpenAI GYM Games
 
-- [ ] 모두를 위한 RL강좌 :: Lecture3 Dummy Q-learning(table)
+- [x] 모두를 위한 RL강좌 :: Lecture3 Dummy Q-learning(table)
 
-
+- [x] 모두를 위한 RL강좌 :: Lab2 Playing OpenAI GYM Games
 
 
 
