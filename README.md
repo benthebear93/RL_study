@@ -18,8 +18,12 @@ Collection of everything that i learn about Reinforcement Learning
 - [x] 모두를 위한 RL강좌 :: Lab3 Dummy Q-learning(table)
 - [x] 모두를 위한 RL강좌 :: Lecture4 Q-learning , exploit&exploration and discounted reward
 - [x] 모두를 위한 RL강좌 :: Lab4 Q-learning , exploit&exploration and discounted reward
-- [ ] 모두를 위한 RL강좌 :: Lecture5 Q-learning on Nondeterministic worlds!
-- [ ] 모드를 위한 RL강좌 :: Lab5 Q-learning on Nondeterministic worlds!
+- [x] 모두를 위한 RL강좌 :: Lecture5 Q-learning on Nondeterministic worlds!
+- [x] 모드를 위한 RL강좌 :: Lab5 Q-learning on Nondeterministic worlds!
+- [ ] 모드를 위한 RL강좌 :: Lecture6 Q-Network
+- [ ] 모드를 위한 RL강좌 :: Lab6-1 Q-Network for Frozen Lake
+- [ ] 모드를 위한 RL강좌 :: Lab6-2 Q-Network for Cart Pole
+- [ ] 모드를 위한 RL강좌 :: Lecture7 DQN
 
 
 
