@@ -24,6 +24,23 @@ Collection of everything that i learn about Reinforcement Learning
 - [x] 모드를 위한 RL강좌 :: Lab6-1 Q-Network for Frozen Lake
 - [x] 모드를 위한 RL강좌 :: Lab6-2 Q-Network for Cart Pole
 - [x] 모드를 위한 RL강좌 :: Lecture7 DQN
+- [x] Pytorch  KR :: Basic
+- [x] DQN     Implementation  reference MinimalRL(https://github.com/seungeunrho/minimalRL)
+- [ ] PPO     Implementation  reference MinimalRL(https://github.com/seungeunrho/minimalRL)
+- [ ] DDPG    Implementation  reference MinimalRL(https://github.com/seungeunrho/minimalRL)
+- [ ] A3C     Implementation  reference MinimalRL(https://github.com/seungeunrho/minimalRL)
+- [ ] ACER    Implementation  reference MinimalRL(https://github.com/seungeunrho/minimalRL)
+- [ ] A2C     Implementation  reference MinimalRL(https://github.com/seungeunrho/minimalRL)
+- [ ] SAC     Implementation  reference MinimalRL(https://github.com/seungeunrho/minimalRL)
+- [ ] PPO-C   Implementation  reference MinimalRL(https://github.com/seungeunrho/minimalRL)
+- [ ] One    Link manipulator (gazebo + pytorch)
+- [ ] Two    Link manipulator (gazebo + pytorch)
+- [ ] Three  Link manipulator (gazebo + pytorch)
+- [ ] four   Link manipulator (gazebo + pytorch)
+- [ ] five   Link manipulator (gazebo + pytorch)
+- [ ] six    Link manipulator (gazebo + pytorch)
+
+
 
 
 
