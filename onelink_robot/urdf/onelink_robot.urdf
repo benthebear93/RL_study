@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version:   Build Version: 1.5.7817.18516
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="onelink_robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="8.7018E-07 2.7995E-08 0.047164"
+        rpy="0 0 0" />
+      <mass
+        value="1.3101" />
+      <inertia
+        ixx="0.0024623"
+        ixy="3.2088E-09"
+        ixz="2.422E-09"
+        iyy="0.0024625"
+        iyz="-4.6557E-09"
+        izz="0.0027581" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://onelink_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://onelink_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="-0.30846 -0.007069 -0.0093247"
+        rpy="0 0 0" />
+      <mass
+        value="4.5602" />
+      <inertia
+        ixx="0.0089629"
+        ixy="-0.001234"
+        ixz="-0.0059844"
+        iyy="0.06278"
+        iyz="-0.00013714"
+        izz="0.061068" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://onelink_robot/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.93725 0.13725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://onelink_robot/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="continuous">
+    <origin
+      xyz="0.45811 0.010499 0.195"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

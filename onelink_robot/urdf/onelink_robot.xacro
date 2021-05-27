@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<robot name="onelink_robot" xmlns:xacro="http://wiki.ros.org/xacro">
+  <!-- TX90 -->
+  <xacro:include filename="$(find onelink_robot)/urdf/onelink_robot_macro.xacro"/>	
+<!--   <xacro:include filename="$(find staubli_tx90_gazebo)/urdf/cfrp_macro.xacro"/>  -->
+  
+  <xacro:onelink_robot prefix=""/>
+
+  <!-- Fix robot to Gazebo world -->
+  <link name="world"/>
+
+
+  <joint name="world-base_link-fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+</robot>
