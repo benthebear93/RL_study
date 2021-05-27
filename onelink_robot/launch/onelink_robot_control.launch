@@ -6,5 +6,5 @@
 
   <!-- load the arm controller -->
   <rosparam file="$(find onelink_robot)/config/onelink_robot_arm_controller.yaml" command="load" />
-  <node name="onelink_robot_controller_spawner" pkg="controller_manager" type="spawner" args="arm_controller" />
+  <node name="arm_controller_spawner" pkg="controller_manager" type="spawner" args="arm_controller" />
 </launch>
