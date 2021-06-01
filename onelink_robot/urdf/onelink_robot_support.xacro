@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-
-<robot name="onelink_robot" xmlns:xacro="http://wiki.ros.org/xacro">
-  <xacro:include filename="$(find onelink_robot)/urdf/onelink_robot_support_macro.xacro"/>
-  <xacro:onelink_robot prefix=""/>
-</robot>
