@@ -1,0 +1,8 @@
+controller_list:
+  - name: fake_onelink_robot_controller
+    joints:
+      - joint_1
+      - joint_2
+initial:  # Define initial robot poses.
+  - group: onelink_robot
+    pose: basic
