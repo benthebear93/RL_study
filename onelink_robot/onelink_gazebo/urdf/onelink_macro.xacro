@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+<xacro:include filename="$(find onelink_support)/urdf/onelink_macro.xacro"/>
+<xacro:macro name="onelink_robot" params="prefix">
+  <xacro:onelink prefix="${prefix}" />
+
+  <!-- transmission list -->
+  <transmission name="${prefix}tran1">
+    <robotNamespace>/${prefix}</robotNamespace>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}joint_1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}motor1">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo reference="${prefix}base_link">
+    <material>Gazebo/Yellow</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  <gazebo reference="${prefix}link_1">
+    <material>Gazebo/Yellow</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+
+  <gazebo> 
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"> 
+      <robotNamespace>/${prefix}</robotNamespace> 
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> 
+    </plugin> 
+  </gazebo>
+  </xacro:macro>
+</robot>
