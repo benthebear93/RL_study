@@ -1,13 +1,16 @@
 import gym
-import numpy as np
 from gym.spaces import Discrete, Box, Tuple
-from get_state import FK
-from get_action import 
+import copy
+
+import rospy
+import roslaunch
+import time
 
 
 def distance(curr_pose, goal_pose):
 	dist = np.sqrt(np.sum((curr_pose-goal_pose)**2, axis=0))
 	return dist
+
 
 class Tx90Env(gym.Env):
 	def __init__(self):
@@ -74,7 +77,7 @@ class Tx90Env(gym.Env):
 
 		curr_pose = np.array(self.state[0])
 		d = goal_distance(curr_pose, goal_pose)
-		if 
+		return d 
 
 	def get_done(self):
 
@@ -91,6 +94,7 @@ class Tx90Env(gym.Env):
 			return False
 
 	def step(self, action, time_step):
+		
 
 	def reset(self):
 
