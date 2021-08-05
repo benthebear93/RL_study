@@ -26,7 +26,7 @@ Collection of everything that i learn about Reinforcement Learning
 - [x] 모드를 위한 RL강좌 :: Lecture7 DQN
 - [x] Pytorch  KR :: Basic
 - [x] VanilaPG *Review* / Implementation
-- [ ] NPG       Review / Implementation
+- [X] NPG       Review / Implementation
 - [ ] DQN        Review / Implementation  
 - [ ] PPO         Review / Implementation    
 - [x] DDPG      *Review* / Implementation    
