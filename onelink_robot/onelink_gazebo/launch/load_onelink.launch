@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find onelink_gazebo)/urdf/onelink.xacro' use_nominal_extrinsics:=true add_plug:=false" />
-</launch>
-
-<!-- use_nominal_extrinsics:=true add_plug:=false!-->
