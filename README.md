@@ -29,7 +29,8 @@ Collection of everything that i learn about Reinforcement Learning
 - [X] NPG       Review / Implementation
 - [ ] DQN        Review / Implementation  
 - [ ] PPO         Review / Implementation    
-- [x] DDPG      *Review* / Implementation    
+- [x] DDPG      *Review* / Implementation   
+- [x] HER *Review* / Implementation 
 - [ ] A3C          Review / Implementation    
 - [ ] ACER      Review / Implementation   
 - [ ] A2C        Review / Implementation   
