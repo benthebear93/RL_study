@@ -31,10 +31,11 @@ Collection of everything that i learn about Reinforcement Learning
 - [ ] PPO         Review / Implementation    
 - [x] DDPG      *Review* / Implementation   
 - [x] HER *Review* / Implementation 
+- [x] HAC Review / Implmentation
 - [ ] A3C          Review / Implementation    
 - [ ] ACER      Review / Implementation   
 - [ ] A2C        Review / Implementation   
-- [ ] SAC        Review / Implementation  
+- [x] SAC        Review / Implementation  
 - [ ] PPO-C   Review / Implementation    
 
 
