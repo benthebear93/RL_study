@@ -2,6 +2,15 @@
 
 Collection of everything that i learn about Reinforcement Learning
 
+## Basic Implementation 
+- [x] Value iteration
+- [x] Policy iteration
+- [x] Monte-Carlo Method
+- [] SARSA
+- [] Q-learning
+- [] Actor-Critic Method
+- [] REINFORCE
+## Basic theory
 - [x] 팡요랩의 강화학습의 기초이론 1강
 - [x] 팡요랩의 강화학습의 기초이론 2강
 - [x] 팡요랩의 강화학습의 기초이론 3강
