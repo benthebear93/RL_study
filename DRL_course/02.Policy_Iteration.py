@@ -7,14 +7,15 @@ import time
 from visualize import *
 
 def policy_evaluation(env, Pi, gamma=0.99, epsilon=1e-6):
-    """
-    Policy Evaluiation
-    """
+    # Policy evaluation
+    '''
+    Compute the value function for a fixed policy pi
+    Following bellam expectation eq for Vpi is used
+    '''
     # Extract environment information
     obs_space = env.observation_space
     n_state = obs_space.n
     P = env.unwrapped.P
-    print(P.keys())
     # Random initial value function 
     V = np.random.uniform(size=(n_state,1))
     # Loop
@@ -37,6 +38,9 @@ def policy_evaluation(env, Pi, gamma=0.99, epsilon=1e-6):
 def policy_improvement(env, V, gamma=0.99):
     """
     Policy Improvement
+    In this step, update the policy distribution using the value function
+    computed by policy evaluation. A new policy distribution is updated
+    greedly. 
     """
     obs_space = env.observation_space
     n_state = obs_space.n
@@ -77,27 +81,33 @@ obs_space = env.observation_space
 n_state = obs_space.n
 action_space = env.action_space
 n_action = action_space.n
+
 print("Observation space:[{}]".format(n_state))
 print("Action space:[{}]".format(n_action))
+
+# initial policy
 Pi = np.random.uniform(size=(n_state,n_action))
 Pi = Pi/np.sum(Pi,axis=1,keepdims=True)
 np.set_printoptions(precision=3,suppress=True)
 plot_policy(Pi,title='Initial Policy')
 
-# Policy evaluation
+# RUn policy evaluation
 start = time.time()
-print("here?")
 V, V_dists, V_list = policy_evaluation(env, Pi, gamma=0.99, epsilon=1e-6)
-print("here?2")
 print("It took [{:.2f}]s.".format(time.time()-start))
 print ("Policy evaluation converged in [{}] loops.".format(len(V_dists)))
+
 plt.plot(V_dists)
 plt.title("Convergence of Policy Evaluation")
 plt.show()
+
 n_plot = 5
 for itr in np.round(np.linspace(0,len(V_list)-1,n_plot)).astype(np.int32):
     V = V_list[itr]
     plot_pi_v(Pi,np.reshape(V,(4,4)),cmap='binary',title="Value Function@iter={}".format(itr))
+
+# Env
+visualize_matrix(M, strs=strs, cmap='Pastel1', title='FrozenLake')
 
 # Initial policy
 Pi = np.random.uniform(size=(n_state,n_action))
@@ -109,7 +119,8 @@ plot_policy(Pi,title='Initial Policy')
 V,V_dists,V_list = policy_evaluation(env,Pi,gamma=0.99,epsilon=1e-6)
 plot_pi_v(Pi,np.reshape(V,(4,4)),
           title='Value Function',title_fs=15,REMOVE_TICK_LABELS=True)
-        
+
+# Run policy improvement
 Pi = policy_improvement(env,V)
 plot_pi_v(Pi,np.reshape(V,(4,4)),title="Policy Improvement")
 

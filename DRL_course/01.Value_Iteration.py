@@ -55,5 +55,52 @@ M[1,1]=M[1,3]=M[2,3]=M[3,0]=2 # Hole
 M[3,3] = 3 # Goal
 visualize_matrix(M,strs=strs,cmap='Pastel1',title='FrozenLake')
 
+# Run value iteration 
 start = time.time()
 Q,V,V_dists, V_list, Q_list = value_iteration(env, gamma=0.99, eps=1e-6)
+print("It took [{:.2f}]s.".format(time.time()-start))
+print("Value Iteration converged in [{}] loops.".format(len(V_dists)))
+
+# Compute the optimal policy and plot
+Pi = np.zeros((n_state, n_action))
+Pi[np.arange(n_state), np.argmax(Q, axis=1)] = 1
+plot_pi_v(Pi, np.reshape(V, (4,4)))
+
+plt.plot(V_dists)
+plt.title("COnvergence of Value Iteraction")
+plt.show()
+
+# Plot how the value function changes over iteration
+n_plot = 5
+for itr in np.round(np.linespace(0, len(Q_list)-1, n_plot)).astype(np.int32):
+    V,Q = V_list[itr], Q_list[itr]
+    Pi = np.zeros((n_state, n_action))
+    Pi[np.`arange`(n_state), np.argmax(Q, axis=1)] = 1
+    plot_pi_v(Pi, np.reshape(V, (4,4)), title="Value Function@iter={}".format(itr))
+
+# Plot the value function of difference gammas
+visualize_matrix(M, strs=strs, cmap='Pastel1', title='FrozenLake')
+for gamma in [0.5, 0.9, 0.95, 0.99]:
+    Q, V, V_dists, V_list, Q_list = value_iteration(env, gamma=gamma, eps=1e-6)
+    Pi = np.zeros((n_state, n_action))
+    Pi[np.arange(n_state), np.argmax(Q, axis=1)] = 1
+    plot_pi_v(Pi, np.reshape(V, (4,4)), title='V (gamma:{:.2f})'.format(gamma))
+
+gamma = 0.99
+Q, V, V_dists, V_list, Q_list = value_iteration(env, gamma=gamma, eps=1e-6)
+Pi = np.zeros((n_state, n_action))
+Pi[np.arange(n_state), np.argmax(Q, axis=1)] = 1
+env = gym.make('FrozenLake-v0')
+obs = env.reset()
+ret = 0
+for tick in range(1000):
+    print("\n tick:[{}]".format(tick))
+    env.render(mode='human')
+    action = np.random.choice(n_action, 1, p=Pi[obs][:])[0]
+    next_obs, reward, done, info = env.step(action)
+    obs = next_obs
+    ret = reward + gamma*ret
+    if done : break
+env.render(mode='human')
+env.close()
+print ("Return is [{:.3f}]".format(ret))
