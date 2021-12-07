@@ -60,6 +60,11 @@ def policy_improvement(env, V, gamma=0.99):
 def policy_iteration(env, gamma=0.99, epsilon=1e-6):
     """
     Policy Iteration
+    Iterates policy eval, improve
+    1. Randomly init the policy dist
+    2. Compute the value function by policy eval
+    3. Update the policy by policy improvement
+    4. If the policy dist does not change, stop
     """
     obs_space = env.observation_space
     n_state = obs_space.n
@@ -123,6 +128,11 @@ plot_pi_v(Pi,np.reshape(V,(4,4)),
 # Run policy improvement
 Pi = policy_improvement(env,V)
 plot_pi_v(Pi,np.reshape(V,(4,4)),title="Policy Improvement")
+
+# Run policy iteration
+start = time.time()
+Pi, V = policy_iteration(env)
+print("It took [{:.2f}]s.".format(time.time()-start))
 
 # Run the optimal Policy , Initialize environment
 obs = env.reset() # reset

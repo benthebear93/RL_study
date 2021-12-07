@@ -86,6 +86,7 @@ for gamma in [0.5, 0.9, 0.95, 0.99]:
     Pi[np.arange(n_state), np.argmax(Q, axis=1)] = 1
     plot_pi_v(Pi, np.reshape(V, (4,4)), title='V (gamma:{:.2f})'.format(gamma))
 
+# Run with the optimal policy
 gamma = 0.99
 Q, V, V_dists, V_list, Q_list = value_iteration(env, gamma=gamma, eps=1e-6)
 Pi = np.zeros((n_state, n_action))
@@ -96,11 +97,27 @@ ret = 0
 for tick in range(1000):
     print("\n tick:[{}]".format(tick))
     env.render(mode='human')
-    action = np.random.choice(n_action, 1, p=Pi[obs][:])[0]
+    action = np.random.choice(n_action, 1, p=Pi[obs][:])[0] # optimal policy
     next_obs, reward, done, info = env.step(action)
     obs = next_obs
     ret = reward + gamma*ret
     if done : break
+env.render(mode='human')
+env.close()
+print ("Return is [{:.3f}]".format(ret))
+
+# Run with the random policy
+env = gym.make('FrozenLake-v0')
+obs = env.reset() # reset
+ret = 0
+for tick in range(1000):
+    print("\n tick:[{}]".format(tick))
+    env.render(mode='human')
+    action = env.action_space.sample() # random action 
+    next_obs,reward,done,info = env.step(action)
+    obs = next_obs
+    ret = reward + gamma*ret 
+    if done: break
 env.render(mode='human')
 env.close()
 print ("Return is [{:.3f}]".format(ret))
